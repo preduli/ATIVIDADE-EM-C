@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <locale.h>
+int main(){
+setlocale(LC_ALL, "Portuguese");
+float pesoPeixe, multa;
+printf("quantos KG de peixe você tem: ");
+scanf("%f", &pesoPeixe);
+if (pesoPeixe > 50){
+multa = (pesoPeixe - 50) * 4.0;
+printf("você execedeu o limete de peso. a multa: RS%.2f\n", multa);
+}else{
+printf("peso dentro do limite. sem multa\n");
+}
+return 0;
