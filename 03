@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+setlocale(LC_ALL, "Portuguese");
+int opcao;
+int saldo = 1000, saldodestino = 500;
+int saque, sacar, valor, trans, valor_trans;
+do {
+printf("1- saldo\n");
+printf("2-saque\n");
+printf("3-deposito\n");
+printf("4-transferencia\n");
+printf("5-sair\n");
+printf("digite sua opção: ");
+scanf("%d", &opcao);
+
+switch(opcao){
+case 1: 
+printf("seu saldo é de 1000:");
+break;
+	case 2: 
+printf("informe quanto quer sacar: ");
+scanf("%d", &sacar);
+if(sacar <= saldo) {
+    saque = saldo - sacar;
+    printf("Saque realizado com sucesso.\n");
+    printf("Seu novo saldo é: %d\n", saque);
+    } else {
+    printf("Saldo insuficiente!\n");
+   }
+    break; 
+    case 3: 
+    printf("informe quanto quer depositar: ");
+    scanf("%d", &valor);
+if (valor > 0){
+    saldo += valor;
+    printf("deposito realizado com sucesso: \n");
+    printf("seu atul: RS %d\n", saldo);
+}   else {
+	printf("valor invalido!\n");
+}
+break;
+	
+case 4:
+printf("iforme quanto quer transferencia: ");
+scanf("%d", &valor_trans);    
+if(valor_trans > 00 && valor_trans <= saldo){
+	saldo -= valor_trans;
+	saldodestino += valor_trans;
+	printf("transerencia realiziada com sucesso \n");
+	printf("seu novo saldo: RS%d\n", saldo);
+	printf("saldo do desistinatario: RS%d\n",saldodestino);
+
+}  else {
+	printf("valor invalido ou saldo insuficiente\n");
+} break;
+
+    case 5:
+    printf("Saindo do sistema... Até mais!\n");
+    break;
+
+    default:
+    printf("Opção inválida!\n");
+    break;
+        }
+
+    } while(opcao != 5);
+
+    return 0;
+}
