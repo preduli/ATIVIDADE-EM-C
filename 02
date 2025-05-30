@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+float area, litros, preco;
+int latas;
+printf("informe a area em metros quadrados: ");
+scanf("%f", &area);
+
+litros = area/3;
+latas = ceil(litros/18);
+preco = latas * 80;
+
+printf("Voce precisara de %d lata(s) de tinta.\n", latas);
+printf("O preco total sera de R$ %.2f\n", preco);
+
+return 0;
+}
