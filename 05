@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <locale.h>
+int main(){
+setlocale(LC_ALL,"portuguese");
+float velocidade, max, porcentagem;	
+printf("infomer a velocidade do veiculo: ");
+scanf("%f", &velocidade);
+printf("informe a velocidade maxima permitida: ");
+scanf("%f", &max);
+if(velocidade > max) {
+porcentagem = ((velocidade - max) / max) * 100;
+ if(porcentagem <= 10){
+  printf("multa de 50R$. \n");
+}else if (porcentagem <= 20){
+printf("multa de 100 R$.\n");	
+}else{
+  printf("multa de 200 R% \n");
+}
+} else {
+printf("velocidade dentro do limite. \n");
+	
+}
+return 0;	
+}
