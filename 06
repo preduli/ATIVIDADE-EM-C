@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+int main(){
+setlocale(LC_ALL,"portuguese");
+int opcao, diaria, preco;
+do {
+printf("1-quarto simples 150 a diaria \n");
+printf("2-quarto duplo 250 a diria\n");
+printf("3-suite 400 a diaria\n");
+printf("escolha uma das opções: ");
+scanf("%d", &opcao);
+switch(opcao){
+case 1:
+printf("informe quantos dias quer ficar: ");
+scanf("%d", &diaria);	
+preco = 150 * diaria;
+printf("o total a pagar é de %d", preco);
+break;	
+case 2:
+	printf("informe quantos dias quer ficar: ");
+scanf("%d", &diaria);	
+preco = 250 * diaria;
+printf("o total a pagar é de %d", preco);
+break;
+case 3:
+printf("informe quantos dias quer ficar: ");
+scanf("%d", &diaria);	
+preco = 400 * diaria;
+printf("o total a pagar é de %d", preco);
+break;
+default: 
+printf("opcão inválida\n");
+break;
+}
+}while(opcao < 1 || opcao > 3); 
+return 0;	
+}
